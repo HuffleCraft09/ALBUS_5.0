@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#050b14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ALBUS">
+<link rel="manifest" href="./static/manifest.webmanifest">
+<link rel="apple-touch-icon" href="./static/icon.svg">
+<link rel="stylesheet" href="./static/style.css">
+<title>A.L.B.U.S. 5.0</title>
+</head>
+<body>
+<div class="shell">
+<header class="topbar">
+  <button id="menuBtn" class="iconBtn" aria-label="Open navigation">☰</button>
+  <div class="brand"><div class="orb"><i></i></div><div><h1>A.L.B.U.S.</h1><p>AUGMENTED LEARNING BASED UNIVERSAL SYSTEM</p></div></div>
+  <button id="settingsBtn" class="iconBtn" aria-label="Settings">⚙</button>
+</header>
+<div class="layout">
+<aside id="sidebar" class="sidebar"><nav>
+<button class="navBtn active" data-page="home">⌂ <span>HOME</span></button>
+<button class="navBtn" data-page="chat">◈ <span>CHAT</span></button>
+<button class="navBtn" data-page="memory">◉ <span>MEMORY</span></button>
+<button class="navBtn" data-page="research">⌕ <span>RESEARCH</span></button>
+<button class="navBtn" data-page="projects">▣ <span>PROJECTS</span></button>
+<button class="navBtn" data-page="files">□ <span>FILES</span></button>
+<button class="navBtn" data-page="automations">◷ <span>AUTOMATIONS</span></button>
+<button class="navBtn" data-page="devices">⌁ <span>DEVICES</span></button>
+</nav><div class="sideFoot"><span class="dot"></span><span id="networkText">NETWORK CHECKING</span></div></aside>
+<main class="main">
+<section id="page-home" class="page active">
+<div class="hero"><div><span class="eyebrow">UNIFIED COMMAND CENTER · RELEASE 5.0</span><h2>Good to see you.</h2><p>One ALBUS core. Shared memory, research, reasoning, files, projects, automation, and device awareness across phone and desktop browsers.</p></div><div class="heroOrb"><div></div></div></div>
+<div class="cards">
+<button class="dashCard" data-page-jump="chat"><b>CHAT</b><strong>Unified Conversation</strong><span>Ask naturally. No modes to select.</span></button>
+<button class="dashCard" data-page-jump="research"><b>RESEARCH</b><strong>Live Web Research</strong><span>Current information through Puter AI web search.</span></button>
+<button class="dashCard" data-page-jump="projects"><b>PROJECTS</b><strong>Persistent Context</strong><span>Give ALBUS durable project context.</span></button>
+<button class="dashCard" data-page-jump="files"><b>FILES</b><strong>File Intelligence</strong><span>Upload from phone or desktop and analyze.</span></button>
+</div>
+<div class="sectionTitle">CORE ACTIVITY</div><div class="activityStrip"><div><b id="statMessages">0</b><span>MESSAGES</span></div><div><b id="statMemories">0</b><span>MEMORIES</span></div><div><b id="statProjects">0</b><span>PROJECTS</span></div><div><b id="statTasks">0</b><span>TASKS</span></div></div><div class="sectionTitle">SYSTEM STATUS</div><div class="statusGrid"><div><b>CORE</b><strong id="homeCore">ONLINE</strong></div><div><b>AI</b><strong id="homeModel">GPT-5.6 LUNA</strong></div><div><b>MEMORY</b><strong id="homeMemory">LOCAL</strong></div><div><b>DEVICE</b><strong id="homeDevice">PHONE</strong></div></div>
+</section>
+<section id="page-chat" class="page"><div class="pageHead"><div><span class="eyebrow">CONVERSATION</span><h2>Chat</h2><div class="small">ACTIVE PROJECT: <b id="activeProject">NO PROJECT</b> · ATTACHMENT: <b id="fileStatus">NONE</b></div></div><button id="clearBtn" class="smallBtn">CLEAR</button></div><div id="messages" class="messages"></div><div class="quick"><button data-prompt="What time is it?">TIME</button><button data-prompt="What is today's date?">DATE</button><button data-prompt="Give me a quick system check.">STATUS</button><button data-prompt="Remember that I am working on a project.">MEMORY</button></div><form id="composer"><button id="micBtn" type="button" class="toolBtn" aria-label="Voice input">🎙</button><textarea id="input" rows="1" placeholder="Talk to ALBUS..." autocomplete="off"></textarea><button class="send" type="submit" aria-label="Send">➤</button></form></section>
+<section id="page-memory" class="page"><div class="pageHead"><div><span class="eyebrow">LONG-TERM CONTEXT</span><h2>Memory</h2></div><button id="clearMemoryBtn" class="smallBtn">CLEAR MEMORY</button></div><input id="memorySearch" class="searchInput" type="search" placeholder="Search durable memory…"><div id="memoryList" class="panelList"></div></section>
+<section id="page-research" class="page"><div class="pageHead"><div><span class="eyebrow">LIVE INFORMATION</span><h2>Research</h2></div></div><div class="feature"><h3>Research desk</h3><p>Launch a current web research task. ALBUS will gather information, assess uncertainty, and synthesize findings in the same conversation core.</p><form id="researchForm" class="researchForm"><input id="researchQuery" type="search" placeholder="What should ALBUS investigate?" required><button class="primary" type="submit">RUN RESEARCH ↗</button></form><div class="small">Research requires a signed-in Puter session and an available web-search model/tool.</div></div><div class="sectionTitle">RESEARCH WORKFLOW</div><div class="workflow"><div><b>01</b><strong>QUESTION</strong><span>Define the objective</span></div><div><b>02</b><strong>DISCOVERY</strong><span>Retrieve current sources</span></div><div><b>03</b><strong>ANALYSIS</strong><span>Compare evidence</span></div><div><b>04</b><strong>BRIEFING</strong><span>Return conclusions</span></div></div></section>
+<section id="page-projects" class="page"><div class="pageHead"><div><span class="eyebrow">WORKSPACE CONTEXT</span><h2>Projects</h2></div><button id="newProjectBtn" class="smallBtn">+ NEW PROJECT</button></div><div id="projectList" class="panelList"></div></section>
+<section id="page-files" class="page"><div class="pageHead"><div><span class="eyebrow">FILE INTELLIGENCE</span><h2>Files</h2></div><label class="primary fileButton">+ UPLOAD FILE<input id="fileInput" type="file" accept=".txt,.md,.csv,.json,.pdf,image/*,text/*" capture="environment" hidden></label></div><div class="feature"><h3>Phone + desktop uploads</h3><p>Upload a document, PDF, spreadsheet, image, or text file. ALBUS stores the file in your private Puter app storage and can analyze the attached file in Chat.</p></div><div id="fileList" class="panelList"></div></section>
+<section id="page-automations" class="page"><div class="pageHead"><div><span class="eyebrow">BROWSER AUTOMATION</span><h2>Automations</h2></div><button id="newTaskBtn" class="smallBtn">+ REMINDER</button></div><div class="feature"><h3>Reminders</h3><p>Browser-side reminders work on phone and desktop. For a reminder to fire, keep this app open; GitHub Pages cannot provide persistent background execution by itself.</p><button id="requestNotifyBtn" class="primary">ENABLE NOTIFICATIONS</button></div><div id="taskList" class="panelList"></div></section>
+<section id="page-devices" class="page"><div class="pageHead"><div><span class="eyebrow">DEVICE NETWORK</span><h2>Devices</h2></div></div><div id="devicePanel" class="feature"></div></section>
+</main>
+<aside class="rightPanel"><div class="panelTitle">UNIFIED ALBUS CORE</div><div class="coreVisual"><div class="corePulse"></div><span>CORE</span></div><div class="metric"><span>CORE</span><b id="rightCore">● ONLINE</b></div><div class="metric"><span>AI</span><b id="rightModel">GPT-5.6 LUNA</b></div><div class="metric"><span>MEMORY</span><b id="rightMemory">LOCAL</b></div><div class="metric"><span>VOICE</span><b id="rightVoice">READY</b></div><div class="metric"><span>NETWORK</span><b id="rightNetwork">CONNECTED</b></div><div class="metric"><span>PROJECT</span><b id="rightProject">NONE</b></div><div class="deviceMini"><span>DEVICE</span><b id="rightDevice">PHONE</b></div></aside>
+</div></div>
+<div id="settings" class="modal hidden"><div class="modalCard"><div class="modalHead"><h2>ALBUS SETTINGS</h2><button id="closeSettings" class="iconBtn">×</button></div><div id="puterAccount" class="small">Checking Puter account...</div><button id="puterSignIn" class="primary">SIGN IN TO PUTER</button><button id="puterSignOut" class="primary hidden">SIGN OUT OF PUTER</button><label>AI Model<select id="modelSelect"><option value="gpt-5.6-luna">GPT-5.6 Luna</option></select></label><label class="check"><input id="voiceToggle" type="checkbox" checked> Voice responses</label><button id="saveSettings" class="primary">SAVE</button><p class="small">The web app uses Puter.js. No OpenAI or NVIDIA API key is stored in the browser. Your Puter account provides AI/cloud access.</p><button id="exportBtn" class="primary">EXPORT ALBUS BACKUP</button><p id="installHint" class="small">On iPhone/Android, use your browser's Add to Home Screen / Install App option.</p><p class="small">ALBUS 5.0 · Unified Core release</p></div></div>
+<script src="https://js.puter.com/v2/"></script><script src="./static/app.js"></script><script>if("serviceWorker" in navigator){navigator.serviceWorker.register("./static/sw.js").catch(()=>{});}</script>
+</body></html>
