@@ -1,3 +1,0 @@
-# ALBUS 4.0 is designed for static hosting such as GitHub Pages.
-# The web client talks directly to Puter.js, so no API secret is required.
-# This file is retained for project compatibility; GitHub Pages is the recommended deployment target.
